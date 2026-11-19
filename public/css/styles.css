@@ -746,6 +746,48 @@ img {
   padding-top: 24px;
 }
 
+@media (max-width: 1200px) {
+  .hero-inner {
+    gap: 40px;
+  }
+
+  .hero-media {
+    width: 46%;
+  }
+}
+
+@media (max-width: 980px) {
+  .site-header--home .container {
+    flex-wrap: wrap;
+  }
+
+  .site-header--home .nav-links {
+    flex-wrap: wrap;
+    gap: 8px 24px;
+  }
+
+  .site-header--home .nav-links a {
+    padding: 0;
+  }
+
+  .site-header--home .nav-links .btn {
+    margin-left: 0;
+  }
+
+  .hero-inner {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .hero-media {
+    width: 100%;
+  }
+
+  .hero-image {
+    aspect-ratio: 3 / 2;
+  }
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 40px;
@@ -771,6 +813,10 @@ img {
 
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .playbook-grid {
+    grid-template-columns: 1fr;
   }
 
   .contact-layout {
