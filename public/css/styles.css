@@ -1,5 +1,21 @@
 /* Calico Media marketing site */
 
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/inter-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/inter-latin-700-normal.woff2') format('woff2');
+}
+
 :root {
   --ink: #1f1a17;
   --ink-soft: #5b524c;
@@ -406,7 +422,7 @@ img {
 
 .playbook-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 28px;
 }
 
@@ -744,6 +760,48 @@ img {
   border-top: 1px solid #3a322d;
   margin-top: 48px;
   padding-top: 24px;
+}
+
+@media (max-width: 1200px) {
+  .hero-inner {
+    gap: 40px;
+  }
+
+  .hero-media {
+    width: 46%;
+  }
+}
+
+@media (max-width: 980px) {
+  .site-header--home .container {
+    flex-wrap: wrap;
+  }
+
+  .site-header--home .nav-links {
+    flex-wrap: wrap;
+    gap: 8px 24px;
+  }
+
+  .site-header--home .nav-links a {
+    padding: 0;
+  }
+
+  .site-header--home .nav-links .btn {
+    margin-left: 0;
+  }
+
+  .hero-inner {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .hero-media {
+    width: 100%;
+  }
+
+  .hero-image {
+    aspect-ratio: 3 / 2;
+  }
 }
 
 @media (max-width: 768px) {
