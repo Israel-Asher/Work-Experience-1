@@ -1,6 +1,9 @@
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('form-status');
 
+// When the form became ready to fill in. The server rejects anything sent within 3 seconds of this.
+let formReadyAt = performance.now();
+
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
@@ -10,6 +13,7 @@ form.addEventListener('submit', async (event) => {
   statusEl.className = 'form-status';
 
   const data = Object.fromEntries(new FormData(form));
+  data.elapsedMs = Math.round(performance.now() - formReadyAt);
 
   try {
     const response = await fetch('/contact', {
@@ -24,6 +28,7 @@ form.addEventListener('submit', async (event) => {
     }
 
     form.reset();
+    formReadyAt = performance.now();
     statusEl.textContent = "Thanks, we'll be in touch within one business day.";
     statusEl.classList.add('form-status--success');
   } catch (error) {

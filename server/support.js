@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const SUBMISSIONS_FILE = path.join(__dirname, '..', 'data', 'submissions.jsonl');
+// The tests point SUBMISSIONS_FILE at a temporary file so they never touch real submissions.
+const SUBMISSIONS_FILE = process.env.SUBMISSIONS_FILE || path.join(__dirname, '..', 'data', 'submissions.jsonl');
 
 // In production this emails the submission to support@calicomedia.co via the
 // mail relay. Locally we write it to data/submissions.jsonl instead so you can
