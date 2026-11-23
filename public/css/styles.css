@@ -658,6 +658,15 @@ img {
   resize: vertical;
 }
 
+/* Honeypot field: moved off screen rather than display: none, because some bots skip hidden fields */
+.form-trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .form-status {
   margin-top: 16px;
   font-weight: 700;
